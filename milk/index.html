@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <link rel='stylesheet' href='css/BitShadowMachine.min.css' />
+    <script src='scripts/BitShadowMachine.js'></script>
+    <script src='scripts/Box.js'></script>
+    <script src='frames.js'></script>
+  </head>
+  <body>
+
+    <div id='worldA'></div>
+    <script type="text/javascript">
+
+        /**
+         * Tell BitShadowMachine where to find classes.
+         */
+        BitShadowMachine.Classes = {
+          Box: Box
+        };
+
+        var worldA = new BitShadowMachine.World(document.getElementById('worldA'), {
+          width: 700,
+          height: 450,
+          resolution: 4,
+          colorMode: 'rgba',
+          backgroundColor: [113, 142, 66],
+          noMenu: true,
+          gravity: new BitShadowMachine.Vector(-0.1, 0)
+        });
+
+        BitShadowMachine.System.zSort = 1;
+
+        /**
+         * Create a new BitShadowMachine system.
+         */
+        BitShadowMachine.System.init(function() {
+
+          this.add('Box', {
+            color: [255, 0, 0],
+            zIndex: 2
+          });
+
+          this.add('Anim', {
+            location: new BitShadowMachine.Vector(10, 38),
+            frameDuration: 2,
+            zIndex: 50,
+            frames: frames
+          });
+
+          this.add('Anim', {
+            location: new BitShadowMachine.Vector(84, 48),
+            frameDuration: 1,
+            zIndex: 100,
+            frames: frames
+          });
+
+          this.add('Anim', {
+            location: new BitShadowMachine.Vector(43, 18),
+            frameDuration: 3,
+            zIndex: 10,
+            frames: frames
+          });
+
+          //
+
+          var container = document.getElementById('container_world');
+          container.style.boxShadow = 'inset 0px 100px 0 0 rgb(192, 240, 255)';
+
+        }, worldA);
+
+    </script>
+
+  </body>
+</html>
