@@ -7,4 +7,4 @@ These are all the demos I presented for my talk, Pixel Art on the Wall, at [JSFe
 * [Bit-Shadow Press](http://github.com/foldi/Bit-Shadow-Press)
 * [Fractal Bit-Shadows](https://github.com/foldi/Fractal-Bit-Shadows)
 
-You can also find the slides from this talk at [http://foldi.github.io/jsfest2014/](http://foldi.github.io/jsfest2014/)
+You can also find the slides from this talk at [http://foldi.github.io/jsfest2014/slides.pdf](http://foldi.github.io/jsfest2014/.pdf)
