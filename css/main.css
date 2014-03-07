@@ -29,6 +29,8 @@ a.notes-headline, a.notes-headline:visited {color: #444;}
 .link-more {color: #ff4500;}
 .container-feature {display: inline-block;vertical-align: top;margin-right: 10px;width: 318px;border: 1px solid #aaa;background: #eee;margin-bottom: 1em;text-decoration: none;}
 .feature-img {width: 318px;height: 318px;background: #ccc;}
+.feature-img.farm {background: #000 url('../img/farm.png');}
+.feature-img.milk {background: #000 url('../img/milk.png');}
 .feature-img.cats {background: #000 url('../img/cats.png');}
 .feature-img.chai {background: #000 url('../img/chai.png');}
 .feature-img.chaos {background: #000 url('../img/chaos.png');}

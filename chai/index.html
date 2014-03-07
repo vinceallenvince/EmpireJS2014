@@ -1,10 +1,11 @@
 <html>
   <head>
     <link rel='stylesheet' href='css/BitShadowMachine.min.css' />
+    <link rel='stylesheet' href='css/main.css' />
     <script src='scripts/BitShadowMachine.min.js'></script>
     <script src='frames.js'></script>
   </head>
-  <body>
+  <body style='background-color: rgb(96, 71, 42);'>
     <div id='worldA'></div>
     <script type="text/javascript">
 
@@ -13,7 +14,7 @@
           height: 450,
           resolution: 4,
           colorMode: 'rgba',
-          backgroundColor: [0, 0, 0],
+          backgroundColor: [166, 124, 82],
           noMenu: true
         });
 
@@ -22,10 +23,13 @@
          */
         BitShadowMachine.System.init(function() {
 
-          var chai = this.add('Anim', {
-            location: new BitShadowMachine.Vector(10, 93),
+          this.add('Anim', {
+            location: new BitShadowMachine.Vector(10, 90),
             frames: frames
           });
+
+          var container = document.getElementById('container_world');
+          container.style.boxShadow = 'inset 0px 400px 0 0 rgb(198, 156, 109)';
 
         }, worldA);
 

@@ -1,6 +1,7 @@
 <html>
   <head>
     <link rel='stylesheet' href='css/BitShadowMachine.min.css' />
+    <link rel='stylesheet' href='css/main.css' />
     <script src='scripts/BitShadowMachine.min.js'></script>
     <script src='framesChai.js'></script>
     <script src='framesTickles.js'></script>
@@ -15,7 +16,7 @@
           height: 450,
           resolution: 4,
           colorMode: 'rgba',
-          backgroundColor: [0, 0, 0],
+          backgroundColor: [166, 124, 82],
           noMenu: true
         });
 
@@ -25,7 +26,7 @@
         BitShadowMachine.System.init(function() {
 
           var chai = this.add('Anim', {
-            location: new BitShadowMachine.Vector(10, 93),
+            location: new BitShadowMachine.Vector(10, 90),
             frames: framesChai
           });
 
@@ -40,6 +41,9 @@
             frames: framesLilly,
             frameDuration: 3
           });
+
+          var container = document.getElementById('container_world');
+          container.style.boxShadow = 'inset 0px 200px 0 0 rgb(198, 156, 109)';
 
         }, worldA);
 

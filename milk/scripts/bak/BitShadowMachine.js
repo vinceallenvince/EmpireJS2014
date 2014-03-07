@@ -1,8 +1,8 @@
-/*! BitShadowMachine v2.0.14 - 2014-03-07 02:03:13 
- *  Vince Allen 
- *  Brooklyn, NY 
- *  vince@vinceallen.com 
- *  @vinceallenvince 
+/*! BitShadowMachine v2.0.13 - 2014-03-06 10:03:07
+ *  Vince Allen
+ *  Brooklyn, NY
+ *  vince@vinceallen.com
+ *  @vinceallenvince
  *  License: MIT */
 
 var BitShadowMachine = {}, exports = BitShadowMachine;
@@ -1947,9 +1947,9 @@ function World(opt_el, opt_options) {
       container.appendChild(this.menu);
       this.menuHidden = false;
     }
-    
+
     document.body.appendChild(container);
-    
+
   }
 
   /**
@@ -2081,6 +2081,7 @@ Anim.prototype.init = function(options) {
   this.loop = options.loop !== 'undefined' ? true : options.loop;
 
   this.frameDuration = options.frameDuration || 3;
+  this._singleFrame = false;
 
   /**
    * Anim instances must be stored in System._records.list at a lower index
@@ -2097,12 +2098,6 @@ Anim.prototype.init = function(options) {
    * @private
    */
   this._frameCount = 0;
-
-  /**
-   * Flag if there's only one frame in the animation. Use to prevent
-   * creating/removing static AnimUnits.
-   */
-  this._singleFrame = false;
 
 };
 
@@ -2148,7 +2143,7 @@ Anim.prototype.advanceFrame = function() {
     }
   }
 
-  // if there's only 1 frame, set singleFrame flag.
+  // if there's only 1 frame, we do not need to create/remove AnimUnits.
   if (this.frames.length === 1) {
     this._singleFrame = true;
   }
@@ -2189,7 +2184,7 @@ AnimUnit.prototype.init = function(options) {
  * this object destoys itself.
  */
 AnimUnit.prototype.step = function() {
-  var parent = System.getItem(this.parentId); // TODO: this is really inefficient; need to reference the parent another way
+  var parent = System.getItem(this.parentId);
   if (parent._frameCount >= parent.frameDuration) {
     BitShadowMachine.System.destroyItem(this);
   }
